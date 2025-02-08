@@ -3,3 +3,4 @@
 //user inputs x 2 
 //create buttons for the operators
 //connect html elements to javascript
+//updating
