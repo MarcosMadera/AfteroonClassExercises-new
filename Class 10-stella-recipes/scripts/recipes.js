@@ -1,29 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const recipesGrid = document.querySelector(".js-recipes-grid");
-
-    if (!recipesGrid) return;
-
-    // Generate and insert recipes
-    recipes.forEach(recipe => {
-        const recipeCard = document.createElement("div");
-        recipeCard.classList.add("recipe-card");
-
-        recipeCard.innerHTML = `
-            <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}">
-            <h3 class="recipe-title">${recipe.title}</h3>
-            <p class="recipe-description">${recipe.description}</p>
-            <button class="view-recipe-button" data-id="${recipe.id}">View Recipe</button>
-        `;
-
-        recipesGrid.appendChild(recipeCard);
-    });
-
-    // Event listener for recipe buttons
-    recipesGrid.addEventListener("click", (event) => {
-        if (event.target.classList.contains("view-recipe-button")) {
-            const recipeId = event.target.dataset.id;
-            alert(`You clicked on recipe ID: ${recipeId}`);
-            // Navigate or load recipe details dynamically
-        }
-    });
-});
+function renderMovies(listMovies) {
+    const moviesHTML = listMovies
+      .map((movie) => `
+        <div class="movie-container">
+          <div class="movie-image-container">
+            <img class="movie-image" src="${movie.image}" alt="${movie.title}">
+          </div>
+          <div class="movie-details">
+            <div class="movie-title limit-text-to-2-lines">
+              ${movie.title}
+            </div>
+            <div class="movie-genre">
+              ${movie.genre.join(", ")}
+            </div>
+            <div class="movie-rating">
+              Rating: ${movie.rating.toFixed(1)} / 5
+            </div>
+            <div class="movie-year">
+              Released: ${movie.year}
+            </div>
+          </div>
+          <button class="add-to-favorites-button button-primary js-add-to-favorites" 
+          data-movie-id="${movie.id}">
+            Add to Favorites
+          </button>
+        </div>
+      `)
+      .join("");
+  
+    const moviesGrid = document.querySelector('.js-movies-
