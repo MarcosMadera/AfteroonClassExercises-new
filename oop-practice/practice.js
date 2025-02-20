@@ -5,7 +5,7 @@ console.log('Start practicing OOP concepts!');
 // Question 1: Basic Class Creation
 
 class Movie {
-    constructor(title, year) {
+    constructor(title, year = "unknown") {
       this.title = title;
       this.year = year;
     }
@@ -37,4 +37,5 @@ getSeriesDetails() {
 const mySeries = new Series("Stranger Things", 2016, 25);
     console.log(mySeries.getSeriesDetails());
 
-    
+const myMovie3 = new Movie("Vibes", "unknown")
+console.log(myMovie3.getDetails());
