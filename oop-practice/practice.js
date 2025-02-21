@@ -5,11 +5,20 @@ console.log('Start practicing OOP concepts!');
 // Question 1: Basic Class Creation
 // question 4: Using Constructor Defaults
 class Movie {
-    constructor(title, year = "unknown") {
+    #rating;
+
+    constructor(title, year = "unknown", rating) {
       this.title = title;
       this.year = year;
+      this.#rating = 0;
     }
-  
+  setRating(rating) {
+    this.#rating = rating;
+  }
+  getRating() {
+    return this.#rating;
+  }
+
     getDetails() {
       return `${this.title} (${this.year})`;
     }
@@ -40,3 +49,5 @@ const mySeries = new Series("Stranger Things", 2016, 25);
 const myMovie3 = new Movie("Vibes", "unknown")
 console.log(myMovie3.getDetails());
 
+const myMovie4 = new Movie("The Sum of Us",);
+console.log(myMovie4.getDetails);
