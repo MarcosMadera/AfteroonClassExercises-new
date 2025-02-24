@@ -49,5 +49,5 @@ const mySeries = new Series("Stranger Things", 2016, 25);
 const myMovie3 = new Movie("Vibes", "unknown")
 console.log(myMovie3.getDetails());
 
-const myMovie4 = new Movie("The Sum of Us",);
+const myMovie4 = new Movie("The Sum of Us", 1994);
 console.log(myMovie4.getDetails);
